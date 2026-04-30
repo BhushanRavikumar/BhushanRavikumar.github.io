@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="description"
+      content="Bhushan Ravikumar — Robotics &amp; Test Engineer based in Minneapolis. MS Robotics from the University of Minnesota. Portfolio of robotics, embedded, and ML projects."
+    />
+    <title>Bhushan Ravikumar — Robotics Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ========== NAV ========== -->
+    <header class="nav-wrap">
+      <nav class="nav" aria-label="Primary">
+        <a href="#home" class="nav-logo" aria-label="Home">
+          <span class="nav-logo-mark">B</span>
+          <span class="nav-logo-dot"></span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link is-active">Home</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+        </ul>
+        <button
+          class="nav-toggle"
+          aria-controls="nav-links"
+          aria-expanded="false"
+          aria-label="Toggle menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+
+      <div class="actions" aria-label="Quick links">
+        <a
+          class="action-btn"
+          href="https://github.com/Turtlelord-2k"
+          aria-label="GitHub"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.09c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.66.79.55C20.21 21.39 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/>
+          </svg>
+        </a>
+        <a
+          class="action-btn"
+          href="https://linkedin.com/in/bhushanrk"
+          aria-label="LinkedIn"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.55v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0Z"/>
+          </svg>
+        </a>
+        <a
+          class="action-btn"
+          href="mailto:bhushan.rk26@gmail.com"
+          aria-label="Email Bhushan"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+        </a>
+        <a
+          class="action-btn action-btn--primary"
+          href="assets/Bhushan_Ravikumar_Resume.pdf"
+          download="Bhushan_Ravikumar_Resume.pdf"
+          aria-label="Download resume (PDF)"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12"/>
+            <path d="m7 10 5 5 5-5"/>
+            <path d="M5 21h14"/>
+          </svg>
+          <span>Resume</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- ========== HERO ========== -->
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero-intro reveal">
+            <div class="avatar">
+              <div class="avatar-ring"></div>
+              <div class="avatar-inner">BR</div>
+            </div>
+            <div>
+              <p class="hero-name">Bhushan Ravikumar</p>
+              <p class="hero-sub">
+                Bracco Medical Technologies · MS Robotics, University of Minnesota.
+              </p>
+            </div>
+          </div>
+
+          <h1 class="hero-title reveal" aria-label="System Test Engineer">
+            <span class="line"><span class="line-inner">SYSTEM</span></span>
+            <span class="line"><span class="line-inner">TEST</span></span>
+            <span class="line"><span class="line-inner">ENGINEER</span></span>
+          </h1>
+
+          <div class="hero-meta">
+            <p class="hero-blurb reveal">
+              Building intelligent, reliable systems where mechatronics meets
+              machine learning — from haptic teleoperation and ROS-based
+              robotics to medical-device V&amp;V and embedded control.
+            </p>
+
+            <ul class="stats reveal" role="list">
+              <li class="stat">
+                <span class="stat-num" data-count="4">+0</span>
+                <span class="stat-label">Years of<br />engineering</span>
+              </li>
+              <li class="stat">
+                <span class="stat-num" data-count="6">+0</span>
+                <span class="stat-label">Featured<br />projects</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MARQUEE ========== -->
+      <section class="marquee-wrap" aria-hidden="true">
+        <div class="marquee">
+          <div class="marquee-track">
+            <span>Robotics</span><span class="dot">✦</span>
+            <span>Embedded Systems</span><span class="dot">✦</span>
+            <span>Computer Vision</span><span class="dot">✦</span>
+            <span>System V&amp;V</span><span class="dot">✦</span>
+            <span>Test Engineering</span><span class="dot">✦</span>
+            <span>Mechatronics</span><span class="dot">✦</span>
+          </div>
+        </div>
+        <div class="marquee marquee--reverse">
+          <div class="marquee-track">
+            <span>Python</span><span class="dot">✦</span>
+            <span>C++</span><span class="dot">✦</span>
+            <span>ROS</span><span class="dot">✦</span>
+            <span>PyTorch</span><span class="dot">✦</span>
+            <span>LabVIEW</span><span class="dot">✦</span>
+            <span>SolidWorks</span><span class="dot">✦</span>
+            <span>ANSYS</span><span class="dot">✦</span>
+            <span>OpenCV</span><span class="dot">✦</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== EXPERIENCE ========== -->
+      <section id="experience" class="section">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow"><i class="dot-mark"></i> Career</span>
+            <h2 class="section-title">
+              Engineering <br /><span class="title-accent">Experience</span>
+            </h2>
+          </header>
+
+          <ol class="timeline" role="list">
+            <li class="exp reveal">
+              <button class="exp-trigger" type="button" data-exp="bracco" aria-haspopup="dialog">
+                <img class="exp-logo" src="assets/Bracco%20Logo.png" alt="Bracco logo" loading="lazy" />
+                <div class="exp-body">
+                  <div class="exp-head">
+                    <div>
+                      <h3 class="exp-company">Bracco Medical Technologies</h3>
+                      <p class="exp-role">System Test Engineer · Minneapolis, MN</p>
+                    </div>
+                    <span class="exp-dates">May 2025 – Present</span>
+                  </div>
+                  <p class="exp-desc">
+                    Lead system integration, characterization, and V&amp;V testing
+                    of complex electromechanical subsystems. Authored 60+
+                    risk-based test protocols (~20% of program coverage), built
+                    PyQt and LabVIEW automation that cut manufacturing test time
+                    by 40%, and debugged PID motor-control firmware to bring
+                    actuator performance within spec.
+                  </p>
+                </div>
+                <span class="exp-cue" aria-hidden="true">View details →</span>
+              </button>
+            </li>
+
+            <li class="exp reveal">
+              <button class="exp-trigger" type="button" data-exp="ambient" aria-haspopup="dialog">
+                <img class="exp-logo" src="assets/ambientintelligence_logo.jfif" alt="Ambient Intelligence logo" loading="lazy" />
+                <div class="exp-body">
+                  <div class="exp-head">
+                    <div>
+                      <h3 class="exp-company">Ambient Intelligence</h3>
+                      <p class="exp-role">R&amp;D Engineer · Minneapolis, MN</p>
+                    </div>
+                    <span class="exp-dates">Aug 2024 – May 2025</span>
+                  </div>
+                  <p class="exp-desc">
+                    Architected the Python system software for an mmWave-based
+                    fall-detection device on Raspberry Pi — point-cloud
+                    preprocessing, real-time detection, AWS IoT/MQTT integration,
+                    and headless Linux service management. Drove the device from
+                    prototype through 3D-printed enclosures and healthcare-aligned
+                    validation.
+                  </p>
+                </div>
+                <span class="exp-cue" aria-hidden="true">View details →</span>
+              </button>
+            </li>
+
+            <li class="exp reveal">
+              <button class="exp-trigger" type="button" data-exp="umn" aria-haspopup="dialog">
+                <img class="exp-logo" src="assets/University%20of%20Minnesota%20logo.jfif" alt="University of Minnesota logo" loading="lazy" />
+                <div class="exp-body">
+                  <div class="exp-head">
+                    <div>
+                      <h3 class="exp-company">University of Minnesota</h3>
+                      <p class="exp-role">Research Assistant · Minneapolis, MN</p>
+                    </div>
+                    <span class="exp-dates">Jan 2025 – May 2025</span>
+                  </div>
+                  <p class="exp-desc">
+                    Designed and fabricated a UAV-engine dynamometer test bench
+                    using rapid prototyping and embedded hardware to validate
+                    data-driven control algorithms. Tightened the data-collection
+                    workflow to improve repeatability of efficiency measurements.
+                  </p>
+                </div>
+                <span class="exp-cue" aria-hidden="true">View details →</span>
+              </button>
+            </li>
+
+            <li class="exp reveal">
+              <button class="exp-trigger" type="button" data-exp="kpmg" aria-haspopup="dialog">
+                <img class="exp-logo" src="assets/kpmg_logo.jfif" alt="KPMG logo" loading="lazy" />
+                <div class="exp-body">
+                  <div class="exp-head">
+                    <div>
+                      <h3 class="exp-company">KPMG</h3>
+                      <p class="exp-role">Associate Analyst · Bangalore, India</p>
+                    </div>
+                    <span class="exp-dates">Jul 2022 – Aug 2023</span>
+                  </div>
+                  <p class="exp-desc">
+                    Analyzed large-scale trade data for Carrier Corp and Stellantis,
+                    surfacing $10.4M in cost savings via favorable tariff
+                    identification. Streamlined Python/VBA data pipelines and
+                    introduced a standardized reporting structure that cut process
+                    time by 15%.
+                  </p>
+                </div>
+                <span class="exp-cue" aria-hidden="true">View details →</span>
+              </button>
+            </li>
+
+            <li class="exp reveal">
+              <button class="exp-trigger" type="button" data-exp="moog" aria-haspopup="dialog">
+                <img class="exp-logo" src="assets/Moog%20logo.jfif" alt="Moog Inc. logo" loading="lazy" />
+                <div class="exp-body">
+                  <div class="exp-head">
+                    <div>
+                      <h3 class="exp-company">Moog Inc.</h3>
+                      <p class="exp-role">Mechanical Engineer Intern · Bangalore, India</p>
+                    </div>
+                    <span class="exp-dates">Sept 2021 – Dec 2021</span>
+                  </div>
+                  <p class="exp-desc">
+                    Ran qualification &amp; acceptance testing on the Geared Rotary
+                    Motor for the Comac C919 aircraft. Built MATLAB-driven custom
+                    test paths and configured the inboard aileron servo endurance
+                    rig — improving test accuracy by 10%.
+                  </p>
+                </div>
+                <span class="exp-cue" aria-hidden="true">View details →</span>
+              </button>
+            </li>
+          </ol>
+
+          <!-- ======= EXPERIENCE DETAIL TEMPLATES =======
+               Each template's content is shown in the modal when its
+               experience is clicked. Add or edit content freely below. -->
+
+          <template data-exp-template="bracco">
+            <header class="dialog-head">
+              <img src="assets/Bracco%20Logo.png" alt="" class="dialog-logo" />
+              <div>
+                <h2 id="exp-dialog-title">Bracco Medical Technologies</h2>
+                <p class="dialog-role">System Test Engineer · Minneapolis, MN</p>
+                <p class="dialog-dates">May 2025 – Present</p>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Execute system integration, characterization, and V&amp;V testing of complex electromechanical subsystems using lab test equipment and DAQ-based measurement systems.</li>
+                <li>Authored <strong>60+ risk-based system &amp; software V&amp;V protocols</strong> — about 20% of total program coverage for the platform.</li>
+                <li>Developed PyQt and Tkinter GUIs for manufacturing teams to automate test workflows, reducing manufacturing test time by <strong>40%</strong>.</li>
+                <li>Designed custom electromechanical fixtures in SolidWorks; built Python, LabVIEW, and microcontroller-based tools that reduced test execution time by <strong>35%</strong>.</li>
+                <li>Led Design of Experiments for safety-critical actuator subsystems and supported acceptance criteria development for performance verification.</li>
+                <li>Conducted Gage R&amp;R studies to validate measurement system capability for high-risk subsystem testing.</li>
+                <li>Built a closed-loop reliability rig for HALT-style testing to generate lifecycle data for next-generation requirements.</li>
+                <li>Debugged and optimized PID-based motor-control firmware to resolve stability issues and bring performance within spec.</li>
+                <li>Defined and updated system requirements based on trends observed from ad-hoc testing and characterization data.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>PyQt</li><li>Tkinter</li><li>LabVIEW</li>
+                <li>SolidWorks</li><li>DAQ</li><li>Microcontrollers</li>
+                <li>Jama Connect</li><li>Jira</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-exp-template="ambient">
+            <header class="dialog-head">
+              <img src="assets/ambientintelligence_logo.jfif" alt="" class="dialog-logo" />
+              <div>
+                <h2 id="exp-dialog-title">Ambient Intelligence</h2>
+                <p class="dialog-role">R&amp;D Engineer · Minneapolis, MN</p>
+                <p class="dialog-dates">Aug 2024 – May 2025</p>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Architected the system software in Python for a fall-detection device, integrating mmWave sensors with Raspberry Pi for real-time data processing.</li>
+                <li>Developed point-cloud preprocessing and detection algorithms for accurate fall detection in clinical environments.</li>
+                <li>Led product development from prototype to testing — including 3D-printed enclosures and regulatory-aligned device validation — ensuring reliability, durability, and healthcare compliance.</li>
+                <li>Configured the Linux environment for headless operation and automated service management, ensuring reliable device uptime.</li>
+                <li>Integrated the device with AWS IoT via MQTT for telemetry and remote management.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>Raspberry Pi</li><li>mmWave Sensors</li>
+                <li>AWS IoT</li><li>MQTT</li><li>Linux (headless)</li>
+                <li>3D Printing</li><li>Point-cloud Processing</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-exp-template="umn">
+            <header class="dialog-head">
+              <img src="assets/University%20of%20Minnesota%20logo.jfif" alt="" class="dialog-logo" />
+              <div>
+                <h2 id="exp-dialog-title">University of Minnesota</h2>
+                <p class="dialog-role">Research Assistant · Minneapolis, MN</p>
+                <p class="dialog-dates">Jan 2025 – May 2025</p>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Designed and fabricated a UAV-engine dynamometer test bench using rapid prototyping and embedded hardware to validate data-driven control algorithms.</li>
+                <li>Improved the mechanical setup and data-collection workflow to increase repeatability and reliability of engine-efficiency measurements.</li>
+                <li>Worked in a research lab environment, collaborating with graduate researchers on experimental setup and methodology.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>SolidWorks</li><li>Embedded C</li><li>MATLAB</li>
+                <li>Rapid Prototyping</li><li>DAQ</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-exp-template="kpmg">
+            <header class="dialog-head">
+              <img src="assets/kpmg_logo.jfif" alt="" class="dialog-logo" />
+              <div>
+                <h2 id="exp-dialog-title">KPMG</h2>
+                <p class="dialog-role">Associate Analyst · Bangalore, India</p>
+                <p class="dialog-dates">Jul 2022 – Aug 2023</p>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Analyzed large-scale trade data for <strong>Carrier Corp</strong> and <strong>Stellantis</strong>, achieving <strong>$10.4M in cost savings</strong> by identifying favorable tariff rates and reducing import duties.</li>
+                <li>Led a cross-functional initiative to streamline data pipelines using Python and Excel/VBA.</li>
+                <li>Introduced a standardized reporting structure that reduced overall process time by <strong>15%</strong>.</li>
+                <li>Partnered with stakeholders across trade, finance, and operations to translate data insights into actionable savings.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>Excel / VBA</li><li>SQL</li>
+                <li>Data Pipelines</li><li>Stakeholder Management</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-exp-template="moog">
+            <header class="dialog-head">
+              <img src="assets/Moog%20logo.jfif" alt="" class="dialog-logo" />
+              <div>
+                <h2 id="exp-dialog-title">Moog Inc.</h2>
+                <p class="dialog-role">Mechanical Engineer Intern · Bangalore, India</p>
+                <p class="dialog-dates">Sept 2021 – Dec 2021</p>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Conducted rigorous Qualification &amp; Acceptance testing for the Geared Rotary Motor deployed in the <strong>Comac C919 aircraft</strong>.</li>
+                <li>Built MATLAB-driven custom test paths for various rigs, streamlining testing and improving downstream data analysis.</li>
+                <li>Managed execution of the Inboard Aileron Servo Control endurance test, configuring test equipment to deliver a <strong>10% improvement in test accuracy</strong>.</li>
+                <li>Collaborated with senior engineers on aerospace-grade component validation and reporting.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>MATLAB</li><li>Test Rig Configuration</li>
+                <li>DAQ</li><li>Aerospace Components</li>
+              </ul>
+            </section>
+          </template>
+        </div>
+      </section>
+
+      <!-- ========== RECENT PROJECTS ========== -->
+      <section id="projects" class="section">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow"><i class="dot-mark"></i> Featured</span>
+            <h2 class="section-title">
+              Recent <br /><span class="title-accent">Projects</span>
+            </h2>
+          </header>
+
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-1">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">01</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Robotics</span>
+                  <span class="tag">Haptics</span>
+                </div>
+                <h3 class="project-title">HapticTelegraph: Variable-Delay Surgical Teleoperation</h3>
+                <p class="project-desc">
+                  Built a haptic teleoperation system with simulated 0–500 ms
+                  delay variance using Python and embedded hardware. Across
+                  30+ trials in 5 conditions, found task failures jumped 67%
+                  at 200 ms variance — mapping critical thresholds for
+                  precision teleoperation.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-2">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">02</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">ROS</span>
+                  <span class="tag">Computer Vision</span>
+                </div>
+                <h3 class="project-title">Multi-Robot Warehouse Simulation</h3>
+                <p class="project-desc">
+                  ROS + Gazebo simulation combining YOLO v5 for perception, DH
+                  parameters and inverse kinematics for pick-and-place, and
+                  Anytime Repairing A* with Model Predictive Control for
+                  pallet-truck navigation — hitting a 78% navigation success
+                  rate.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-3">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">03</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Embedded</span>
+                  <span class="tag">IoT</span>
+                </div>
+                <h3 class="project-title">mmWave Fall-Detection Device</h3>
+                <p class="project-desc">
+                  End-to-end Python system on Raspberry Pi pairing mmWave
+                  sensors with point-cloud preprocessing for real-time fall
+                  detection. Headless Linux service management and AWS
+                  IoT/MQTT pipeline, validated through healthcare-aligned
+                  device testing.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-1">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">04</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Deep Learning</span>
+                  <span class="tag">TensorFlow</span>
+                </div>
+                <h3 class="project-title">Semantic Segmentation for Urban Driving</h3>
+                <p class="project-desc">
+                  Tuned the FasterSeg architecture and augmented the
+                  Cityscapes dataset for autonomous-driving scene parsing —
+                  shrinking training time by 15% while reaching a 69.78 mean
+                  Intersection-over-Union (mIoU).
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-2">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">05</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Hardware</span>
+                  <span class="tag">Test Bench</span>
+                </div>
+                <h3 class="project-title">UAV-Engine Dynamometer Test Bench</h3>
+                <p class="project-desc">
+                  Designed and fabricated a dynamometer rig with rapid
+                  prototyping and embedded hardware to validate data-driven
+                  engine-control algorithms. Tightened the measurement
+                  workflow for repeatable efficiency data.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-3">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">06</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Aerospace</span>
+                  <span class="tag">ANSYS</span>
+                </div>
+                <h3 class="project-title">CFRP Deployable Structure for LEO Satellites</h3>
+                <p class="project-desc">
+                  Researched CFRP materials, fabrication, and structural
+                  mechanics in ANSYS for the LEO environment. Designed a
+                  3D-printed deployment mechanism for reliable, integrated
+                  satellite stowage and unfurling.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CORE SKILLS ========== -->
+      <section id="skills" class="section">
+        <div class="container">
+          <header class="section-header reveal">
+            <span class="eyebrow"><i class="dot-mark"></i> Stack</span>
+            <h2 class="section-title">
+              Core <br /><span class="title-accent">Skills</span>
+            </h2>
+          </header>
+
+          <div class="skill-grid">
+            <div class="skill reveal">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              <div>
+                <h3>Programming</h3>
+                <p>Python · C++ · JS · SQL</p>
+              </div>
+            </div>
+
+            <div class="skill reveal">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4M15 7V4M9 12h.01M15 12h.01M9 16h6"/></svg>
+              </span>
+              <div>
+                <h3>Robotics</h3>
+                <p>ROS · OpenCV · Gazebo</p>
+              </div>
+            </div>
+
+            <div class="skill reveal">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="12" cy="12" r="2.5"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8M7.5 7.5l3 3M16.5 7.5l-3 3M7.5 16.5l3-3M16.5 16.5l-3-3"/></svg>
+              </span>
+              <div>
+                <h3>AI / ML</h3>
+                <p>PyTorch · TensorFlow · SciPy</p>
+              </div>
+            </div>
+
+            <div class="skill reveal">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="m3 7 9 5 9-5M12 22V12"/></svg>
+              </span>
+              <div>
+                <h3>CAD</h3>
+                <p>SolidWorks · Fusion 360 · NX</p>
+              </div>
+            </div>
+
+            <div class="skill reveal">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h3l3-7 4 14 3-9 2 5h5"/></svg>
+              </span>
+              <div>
+                <h3>Simulation</h3>
+                <p>ANSYS · MATLAB · Ricardo</p>
+              </div>
+            </div>
+
+            <div class="skill reveal">
+              <span class="skill-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m10 13 1.5 1.5L15 11"/></svg>
+              </span>
+              <div>
+                <h3>Test &amp; V&amp;V</h3>
+                <p>LabVIEW · PyQt · Jama</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT ========== -->
+      <section id="contact" class="section section--contact">
+        <div class="container">
+          <header class="section-header section-header--center reveal">
+            <span class="eyebrow"><i class="dot-mark"></i> Contact</span>
+            <h2 class="section-title section-title--xl">
+              Let's work <br /><span class="title-accent">together</span>
+            </h2>
+            <p class="contact-sub">
+              Hiring for a robotics, embedded, or test-engineering role —
+              or just want to chat about an interesting problem? Drop a
+              message and I'll get back to you within a couple of days.
+            </p>
+          </header>
+
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" placeholder="Jane Doe" required />
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" placeholder="jane@email.com" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-topic">Inquiry type</label>
+              <select id="f-topic" name="topic">
+                <option value="">Select…</option>
+                <option>Full-time role</option>
+                <option>Internship / co-op</option>
+                <option>Contract or consulting</option>
+                <option>Research collaboration</option>
+                <option>Just saying hi</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              <span>Send message</span>
+              <span class="btn-arrow">→</span>
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-logo">Bhushan<span>.</span></p>
+          <p class="footer-tag">Robotics &amp; Test Engineer · Minneapolis, MN.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://github.com/Turtlelord-2k" aria-label="GitHub" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/bhushanrk" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:ravik039@umn.edu" aria-label="Email">ravik039@umn.edu</a>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> Bhushan Ravikumar. All rights reserved.</span>
+        <span>Crafted with care.</span>
+      </div>
+    </footer>
+
+    <!-- ========== EXPERIENCE DIALOG ========== -->
+    <dialog class="exp-dialog" id="exp-dialog" aria-labelledby="exp-dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <div class="dialog-content"><!-- populated dynamically --></div>
+    </dialog>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
