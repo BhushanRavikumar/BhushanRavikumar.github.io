@@ -118,15 +118,19 @@
 
           <div class="hero-meta">
             <p class="hero-blurb reveal">
-              Building intelligent, reliable systems where mechatronics meets
-              machine learning — from haptic teleoperation and ROS-based
-              robotics to medical-device V&amp;V and embedded control.
+              I&rsquo;m a robotics-trained test and R&amp;D engineer who likes
+              turning messy electromechanical problems into reliable systems.
+              I&rsquo;ve built test rigs, automation GUIs, firmware tools, and
+              sensor-based healthcare devices, with measurable wins in test
+              time, validation, and performance. Basically, I&rsquo;m strongest
+              where hardware, software, data, and &ldquo;why is this not
+              working?&rdquo; all collide.
             </p>
 
             <ul class="stats reveal" role="list">
               <li class="stat">
-                <span class="stat-num" data-count="4">+0</span>
-                <span class="stat-label">Years of<br />engineering</span>
+                <span class="stat-num" data-count="3">+0</span>
+                <span class="stat-label">Years of<br />experience</span>
               </li>
               <li class="stat">
                 <span class="stat-num" data-count="6">+0</span>
@@ -496,34 +500,12 @@
               </div>
             </button>
 
-            <button class="project-card project-trigger reveal" type="button" data-project="multirobot" aria-haspopup="dialog">
-              <div class="project-thumb thumb-3">
+            <button class="project-card project-trigger reveal" type="button" data-project="mmwave" aria-haspopup="dialog">
+              <div class="project-thumb thumb-3 has-image">
+                <img class="thumb-image" src="assets/mmwave%20radar%20-%201.jpeg" alt="mmWave radar fall-detection prototype" loading="lazy" />
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
                 <div class="thumb-label">03</div>
-              </div>
-              <div class="project-body">
-                <div class="project-meta">
-                  <span class="tag">ROS</span>
-                  <span class="tag">Computer Vision</span>
-                </div>
-                <h3 class="project-title">Multi-Robot Warehouse Simulation</h3>
-                <p class="project-desc">
-                  ROS + Gazebo simulation combining YOLO v5 for perception, DH
-                  parameters and inverse kinematics for pick-and-place, and
-                  Anytime Repairing A* with Model Predictive Control for
-                  pallet-truck navigation — hitting a 78% navigation success
-                  rate.
-                </p>
-                <span class="project-cue">View details →</span>
-              </div>
-            </button>
-
-            <button class="project-card project-trigger reveal" type="button" data-project="mmwave" aria-haspopup="dialog">
-              <div class="project-thumb thumb-1">
-                <div class="thumb-glow"></div>
-                <div class="thumb-grid"></div>
-                <div class="thumb-label">04</div>
               </div>
               <div class="project-body">
                 <div class="project-meta">
@@ -537,6 +519,29 @@
                   detection. Headless Linux service management and AWS
                   IoT/MQTT pipeline, validated through healthcare-aligned
                   device testing.
+                </p>
+                <span class="project-cue">View details →</span>
+              </div>
+            </button>
+
+            <button class="project-card project-trigger reveal" type="button" data-project="multirobot" aria-haspopup="dialog">
+              <div class="project-thumb thumb-1">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">04</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">ROS</span>
+                  <span class="tag">Computer Vision</span>
+                </div>
+                <h3 class="project-title">Multi-Robot Warehouse Simulation</h3>
+                <p class="project-desc">
+                  ROS + Gazebo simulation combining YOLO v5 for perception, DH
+                  parameters and inverse kinematics for pick-and-place, and
+                  Anytime Repairing A* with Model Predictive Control for
+                  pallet-truck navigation — hitting a 78% navigation success
+                  rate.
                 </p>
                 <span class="project-cue">View details →</span>
               </div>
@@ -647,10 +652,10 @@
 
           <template data-project-template="multirobot">
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-3" aria-hidden="true">
+              <div class="dialog-thumb thumb-1" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">03</span>
+                <span class="dialog-thumb-label">04</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">Multi-Robot Warehouse Simulation</h2>
@@ -683,11 +688,31 @@
           </template>
 
           <template data-project-template="mmwave">
+            <figure class="dialog-hero dialog-hero--carousel" data-carousel>
+              <ul class="carousel-slides" role="list">
+                <li class="carousel-slide">
+                  <img src="assets/mmwave%20radar%20-%201.jpeg" alt="mmWave radar fall-detection prototype" />
+                </li>
+                <li class="carousel-slide">
+                  <img src="assets/mmwave%20radar%20-%202.jpeg" alt="mmWave radar fall-detection prototype — alternate view" />
+                </li>
+              </ul>
+              <button type="button" class="carousel-nav carousel-prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-nav carousel-next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <ol class="carousel-dots" aria-label="Slide selector">
+                <li><button type="button" aria-label="Slide 1: prototype view"></button></li>
+                <li><button type="button" aria-label="Slide 2: alternate prototype view"></button></li>
+              </ol>
+            </figure>
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-1" aria-hidden="true">
+              <div class="dialog-thumb thumb-3" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">04</span>
+                <span class="dialog-thumb-label">03</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">mmWave Fall-Detection Device</h2>
@@ -771,6 +796,9 @@
                 <li class="carousel-slide">
                   <video src="assets/Test_bench_assembly_video.mp4" controls preload="metadata" muted playsinline aria-label="Assembly walkthrough video"></video>
                 </li>
+                <li class="carousel-slide">
+                  <video src="assets/Test%20bench%20video%202.mp4" controls preload="metadata" muted playsinline aria-label="Test bench secondary video"></video>
+                </li>
               </ul>
               <button type="button" class="carousel-nav carousel-prev" aria-label="Previous slide">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
@@ -782,6 +810,7 @@
                 <li><button type="button" aria-label="Slide 1: assembly view"></button></li>
                 <li><button type="button" aria-label="Slide 2: alternate assembly view"></button></li>
                 <li><button type="button" aria-label="Slide 3: assembly walkthrough video"></button></li>
+                <li><button type="button" aria-label="Slide 4: test bench video"></button></li>
               </ol>
             </figure>
             <header class="dialog-head">
