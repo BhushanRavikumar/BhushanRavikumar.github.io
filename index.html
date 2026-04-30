@@ -449,7 +449,7 @@
           </header>
 
           <div class="project-grid">
-            <article class="project-card reveal">
+            <button class="project-card project-trigger reveal" type="button" data-project="haptic" aria-haspopup="dialog">
               <div class="project-thumb thumb-1">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
@@ -468,10 +468,11 @@
                   at 200 ms variance — mapping critical thresholds for
                   precision teleoperation.
                 </p>
+                <span class="project-cue">View details →</span>
               </div>
-            </article>
+            </button>
 
-            <article class="project-card reveal">
+            <button class="project-card project-trigger reveal" type="button" data-project="multirobot" aria-haspopup="dialog">
               <div class="project-thumb thumb-2">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
@@ -490,10 +491,11 @@
                   pallet-truck navigation — hitting a 78% navigation success
                   rate.
                 </p>
+                <span class="project-cue">View details →</span>
               </div>
-            </article>
+            </button>
 
-            <article class="project-card reveal">
+            <button class="project-card project-trigger reveal" type="button" data-project="mmwave" aria-haspopup="dialog">
               <div class="project-thumb thumb-3">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
@@ -512,10 +514,11 @@
                   IoT/MQTT pipeline, validated through healthcare-aligned
                   device testing.
                 </p>
+                <span class="project-cue">View details →</span>
               </div>
-            </article>
+            </button>
 
-            <article class="project-card reveal">
+            <button class="project-card project-trigger reveal" type="button" data-project="segmentation" aria-haspopup="dialog">
               <div class="project-thumb thumb-1">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
@@ -533,10 +536,11 @@
                   shrinking training time by 15% while reaching a 69.78 mean
                   Intersection-over-Union (mIoU).
                 </p>
+                <span class="project-cue">View details →</span>
               </div>
-            </article>
+            </button>
 
-            <article class="project-card reveal">
+            <button class="project-card project-trigger reveal" type="button" data-project="dyno" aria-haspopup="dialog">
               <div class="project-thumb thumb-2">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
@@ -554,10 +558,11 @@
                   engine-control algorithms. Tightened the measurement
                   workflow for repeatable efficiency data.
                 </p>
+                <span class="project-cue">View details →</span>
               </div>
-            </article>
+            </button>
 
-            <article class="project-card reveal">
+            <button class="project-card project-trigger reveal" type="button" data-project="cfrp" aria-haspopup="dialog">
               <div class="project-thumb thumb-3">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
@@ -575,9 +580,239 @@
                   3D-printed deployment mechanism for reliable, integrated
                   satellite stowage and unfurling.
                 </p>
+                <span class="project-cue">View details →</span>
               </div>
-            </article>
+            </button>
           </div>
+
+          <!-- ======= PROJECT DETAIL TEMPLATES =======
+               Each template's content is shown in the modal when its
+               project card is clicked. Add or edit content freely below. -->
+
+          <template data-project-template="haptic">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-1" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">01</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">HapticTelegraph: Variable-Delay Surgical Teleoperation</h2>
+                <ul class="dialog-tags">
+                  <li>Robotics</li><li>Haptics</li><li>Research</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>A research project investigating how variable network delay impacts surgical teleoperation. A hardware-in-the-loop platform simulates 0–500 ms latency variance to map the failure thresholds of a haptic surgical interface — informing safety margins for next-generation telesurgery systems.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Built a Python + embedded haptic teleoperation rig with hardware-in-the-loop delay injection.</li>
+                <li>Simulated <strong>0–500 ms</strong> variable network delay across the operator–robot link.</li>
+                <li>Ran <strong>30+ trials across 5 latency conditions</strong> to evaluate operator response and task success.</li>
+                <li>Found task failures jumped <strong>67%</strong> at 200 ms variance — quantifying the failure cliff.</li>
+                <li>Completion time peaked at <strong>0.3 s latency</strong>, identifying the precision-teleoperation operating envelope.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>Embedded Hardware</li><li>Haptic Devices</li>
+                <li>Real-time Control</li><li>Statistical Analysis</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="multirobot">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-2" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">02</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">Multi-Robot Warehouse Simulation</h2>
+                <ul class="dialog-tags">
+                  <li>ROS</li><li>Computer Vision</li><li>Path Planning</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>A ROS + Gazebo simulation of a warehouse staffed by collaborative robots. Combines computer vision, manipulator control, and motion planning to handle pick-and-place tasks alongside autonomous pallet-truck navigation.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Built a custom simulation package in <strong>ROS</strong> with Gazebo physics for multi-robot scenarios.</li>
+                <li>Integrated <strong>YOLO v5</strong> for real-time object perception of warehouse parts.</li>
+                <li>Used <strong>DH parameters</strong> for forward kinematics and Inverse Kinematics solvers for pick-and-place manipulation.</li>
+                <li>Combined <strong>Anytime Repairing A*</strong> with Model Predictive Control for pallet-truck navigation under dynamic constraints.</li>
+                <li>Achieved a <strong>78% navigation success rate</strong> across simulated layouts and obstacle configurations.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>ROS</li><li>Gazebo</li><li>YOLO v5</li><li>OpenCV</li>
+                <li>Python</li><li>Inverse Kinematics</li><li>MPC</li><li>A* Planner</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="mmwave">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-3" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">03</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">mmWave Fall-Detection Device</h2>
+                <ul class="dialog-tags">
+                  <li>Embedded</li><li>IoT</li><li>Healthcare</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>A production-targeted fall-detection device built at Ambient Intelligence using mmWave radar instead of cameras. Privacy-preserving real-time detection from raw point-cloud data, validated through healthcare-aligned testing — taken from prototype to deployable product.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Architected the end-to-end <strong>Python system software</strong> on Raspberry Pi.</li>
+                <li>Built a point-cloud preprocessing pipeline tuned for mmWave radar input.</li>
+                <li>Developed real-time fall-detection algorithms validated in clinical environments.</li>
+                <li>Configured <strong>headless Linux</strong> with automated service management for uninterrupted device uptime.</li>
+                <li>Integrated with <strong>AWS IoT via MQTT</strong> for telemetry, alerts, and remote management.</li>
+                <li>Drove product development from prototype to validation, including 3D-printed enclosures.</li>
+                <li>Healthcare-compliant device validation (durability, reliability, regulatory alignment).</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>Raspberry Pi</li><li>mmWave Radar</li>
+                <li>Point-cloud Processing</li><li>Linux (headless)</li>
+                <li>AWS IoT</li><li>MQTT</li><li>3D Printing</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="segmentation">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-1" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">04</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">Semantic Segmentation for Urban Driving</h2>
+                <ul class="dialog-tags">
+                  <li>Deep Learning</li><li>Computer Vision</li><li>Autonomous Driving</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>Optimized the <strong>FasterSeg</strong> architecture for semantic segmentation of urban driving scenes. Tuned the model and augmented the Cityscapes dataset to improve both training efficiency and accuracy for autonomous-driving perception.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Studied and optimized the FasterSeg architecture for autonomous-driving scene parsing.</li>
+                <li>Augmented the <strong>Cityscapes dataset</strong> with custom samples to improve coverage on urban edge cases.</li>
+                <li>Implemented and trained the model in <strong>TensorFlow</strong> with hyper-parameter tuning of the training pipeline.</li>
+                <li>Reduced training period by <strong>15%</strong> while improving categorical accuracy.</li>
+                <li>Achieved a mean Intersection-over-Union (<strong>mIoU = 69.78</strong>) on the validation set.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>TensorFlow</li><li>Python</li><li>FasterSeg</li>
+                <li>Cityscapes</li><li>Data Augmentation</li><li>GPU Training</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="dyno">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-2" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">05</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">UAV-Engine Dynamometer Test Bench</h2>
+                <ul class="dialog-tags">
+                  <li>Hardware</li><li>Test Bench</li><li>Research</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>Designed and built a UAV-engine dynamometer test bench at the University of Minnesota to validate data-driven control algorithms. End-to-end mechanical fabrication paired with embedded data acquisition for closed-loop engine experiments.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Designed a dynamometer test rig for UAV piston engines using rapid-prototyping techniques.</li>
+                <li>Embedded hardware with microcontroller + DAQ for real-time engine measurements.</li>
+                <li>Validated data-driven engine-control algorithms in closed-loop conditions.</li>
+                <li>Tightened the mechanical setup and measurement workflow to maximize repeatability.</li>
+                <li>Improved the reliability of engine-efficiency data feeding the control-algorithm research.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>SolidWorks</li><li>Embedded C</li><li>Microcontrollers</li>
+                <li>DAQ</li><li>MATLAB</li><li>Rapid Prototyping</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="cfrp">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-3" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">06</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">CFRP Deployable Structure for LEO Satellites</h2>
+                <ul class="dialog-tags">
+                  <li>Aerospace</li><li>FEA</li><li>Materials</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>Bachelor's thesis at PES University researching deployable <strong>CFRP</strong> structures for low-earth-orbit satellites. Combined materials research, ANSYS structural analysis, and 3D-printed deployment mechanisms to meet the demands of the LEO environment.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Researched CFRP material properties, fabrication techniques, and structural mechanics.</li>
+                <li>Performed <strong>ANSYS finite-element analysis</strong> to validate structural behavior under LEO conditions.</li>
+                <li>Designed innovative deployment mechanisms with 3D-printed components for reliability.</li>
+                <li>Ensured seamless integration with satellite platforms within strict stowage constraints.</li>
+                <li>Met stringent space-environment requirements (vibration, thermal, vacuum considerations).</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>ANSYS</li><li>SolidWorks</li><li>CFRP Materials</li>
+                <li>FEA</li><li>3D Printing</li><li>Aerospace Design</li>
+              </ul>
+            </section>
+          </template>
         </div>
       </section>
 

@@ -487,11 +487,25 @@ button { font: inherit; }
   background: linear-gradient(180deg, var(--panel), var(--bg-2));
   overflow: hidden;
   transition: transform 0.5s var(--ease), border-color 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  /* button reset (the card is now a <button>) */
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.project-card:hover {
+.project-card:hover,
+.project-card:focus-visible {
   transform: translateY(-6px);
   border-color: var(--line-2);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+.project-card:hover .project-cue,
+.project-card:focus-visible .project-cue {
+  color: var(--accent);
+  transform: translateX(4px);
 }
 .project-thumb {
   position: relative;
@@ -553,6 +567,15 @@ button { font: inherit; }
   letter-spacing: -0.01em;
 }
 .project-desc { margin: 0; color: var(--text-dim); font-size: 14px; line-height: 1.6; }
+.project-cue {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
 
 /* =========================================================
    Experience
@@ -763,6 +786,64 @@ button { font: inherit; }
   padding: 8px;
   border: 1px solid var(--line);
   flex-shrink: 0;
+}
+.dialog-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.dialog-thumb .thumb-glow {
+  position: absolute;
+  width: 80%; aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(20px);
+  background: radial-gradient(circle, var(--accent), transparent 70%);
+  opacity: 0.45;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dialog-thumb.thumb-2 .thumb-glow { background: radial-gradient(circle, #7aa6ff, transparent 70%); }
+.dialog-thumb.thumb-3 .thumb-glow { background: radial-gradient(circle, #ff9ec4, transparent 70%); }
+.dialog-thumb .thumb-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 75%);
+}
+.dialog-thumb-label {
+  position: absolute;
+  top: 4px; right: 6px;
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  z-index: 1;
+}
+.dialog-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding: 0;
+}
+.dialog-tags li {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--text-dim);
 }
 .dialog-head h2 {
   margin: 0 0 4px;

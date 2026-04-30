@@ -42,7 +42,8 @@ Then visit <http://localhost:8080>.
 | ------------------------ | ---------------------------------- |
 | Name / role / blurb      | `index.html` — hero section        |
 | Stats (years/projects)   | `index.html` — `data-count` attrs  |
-| Project cards            | `index.html` — `#projects` section |
+| Project summary cards    | `index.html` — `#projects` section |
+| Project modal content    | `index.html` — `<template data-project-template="…">` blocks |
 | Experience summary cards | `index.html` — `#experience` list  |
 | Experience modal content | `index.html` — `<template data-exp-template="…">` blocks |
 | Company logos            | `assets/` folder — referenced by `<img class="exp-logo">` |

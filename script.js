@@ -141,14 +141,14 @@
     });
   }
 
-  // ---------- Experience modal dialog ----------
+  // ---------- Detail modal dialog (shared by experience + projects) ----------
   const dialog = document.getElementById("exp-dialog");
   const dialogContent = dialog ? dialog.querySelector(".dialog-content") : null;
   const dialogClose = dialog ? dialog.querySelector(".dialog-close") : null;
 
-  const openExpDialog = (id) => {
+  const openDialogFromTemplate = (selector) => {
     if (!dialog || !dialogContent) return;
-    const tpl = document.querySelector(`template[data-exp-template="${id}"]`);
+    const tpl = document.querySelector(selector);
     if (!tpl) return;
     dialogContent.replaceChildren(tpl.content.cloneNode(true));
     dialogContent.scrollTop = 0;
@@ -157,7 +157,7 @@
     requestAnimationFrame(() => dialog.classList.add("is-open"));
   };
 
-  const closeExpDialog = () => {
+  const closeDialog = () => {
     if (!dialog || !dialog.open) return;
     dialog.classList.remove("is-open");
     const onEnd = () => {
@@ -178,20 +178,27 @@
   document.querySelectorAll(".exp-trigger").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-exp");
-      if (id) openExpDialog(id);
+      if (id) openDialogFromTemplate(`template[data-exp-template="${id}"]`);
+    });
+  });
+
+  document.querySelectorAll(".project-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("data-project");
+      if (id) openDialogFromTemplate(`template[data-project-template="${id}"]`);
     });
   });
 
   if (dialog) {
-    if (dialogClose) dialogClose.addEventListener("click", closeExpDialog);
+    if (dialogClose) dialogClose.addEventListener("click", closeDialog);
     // click outside the content (i.e. on the backdrop area inside the dialog box) closes it
     dialog.addEventListener("click", (e) => {
-      if (e.target === dialog) closeExpDialog();
+      if (e.target === dialog) closeDialog();
     });
     // intercept native ESC close so we can run our exit animation
     dialog.addEventListener("cancel", (e) => {
       e.preventDefault();
-      closeExpDialog();
+      closeDialog();
     });
   }
 
