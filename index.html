@@ -449,11 +449,35 @@
           </header>
 
           <div class="project-grid">
-            <button class="project-card project-trigger reveal" type="button" data-project="haptic" aria-haspopup="dialog">
-              <div class="project-thumb thumb-1">
+            <button class="project-card project-trigger reveal" type="button" data-project="dyno" aria-haspopup="dialog">
+              <div class="project-thumb thumb-1 has-image">
+                <img class="thumb-image" src="assets/Test_bench_assembly_1.png" alt="UAV-engine dynamometer test bench" loading="lazy" />
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
                 <div class="thumb-label">01</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Hardware</span>
+                  <span class="tag">Test Bench</span>
+                </div>
+                <h3 class="project-title">UAV-Engine Dynamometer Test Bench</h3>
+                <p class="project-desc">
+                  Designed and fabricated a dynamometer rig with rapid
+                  prototyping and embedded hardware to validate data-driven
+                  engine-control algorithms. Tightened the measurement
+                  workflow for repeatable efficiency data.
+                </p>
+                <span class="project-cue">View details →</span>
+              </div>
+            </button>
+
+            <button class="project-card project-trigger reveal" type="button" data-project="haptic" aria-haspopup="dialog">
+              <div class="project-thumb thumb-2 has-image">
+                <img class="thumb-image" src="assets/HapticTelegraph3Dmodel.png" alt="Haptic Telegraph 3D model" loading="lazy" />
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">02</div>
               </div>
               <div class="project-body">
                 <div class="project-meta">
@@ -473,10 +497,10 @@
             </button>
 
             <button class="project-card project-trigger reveal" type="button" data-project="multirobot" aria-haspopup="dialog">
-              <div class="project-thumb thumb-2">
+              <div class="project-thumb thumb-3">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <div class="thumb-label">02</div>
+                <div class="thumb-label">03</div>
               </div>
               <div class="project-body">
                 <div class="project-meta">
@@ -496,10 +520,10 @@
             </button>
 
             <button class="project-card project-trigger reveal" type="button" data-project="mmwave" aria-haspopup="dialog">
-              <div class="project-thumb thumb-3">
+              <div class="project-thumb thumb-1">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <div class="thumb-label">03</div>
+                <div class="thumb-label">04</div>
               </div>
               <div class="project-body">
                 <div class="project-meta">
@@ -519,10 +543,10 @@
             </button>
 
             <button class="project-card project-trigger reveal" type="button" data-project="segmentation" aria-haspopup="dialog">
-              <div class="project-thumb thumb-1">
+              <div class="project-thumb thumb-2">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <div class="thumb-label">04</div>
+                <div class="thumb-label">05</div>
               </div>
               <div class="project-body">
                 <div class="project-meta">
@@ -535,28 +559,6 @@
                   Cityscapes dataset for autonomous-driving scene parsing —
                   shrinking training time by 15% while reaching a 69.78 mean
                   Intersection-over-Union (mIoU).
-                </p>
-                <span class="project-cue">View details →</span>
-              </div>
-            </button>
-
-            <button class="project-card project-trigger reveal" type="button" data-project="dyno" aria-haspopup="dialog">
-              <div class="project-thumb thumb-2">
-                <div class="thumb-glow"></div>
-                <div class="thumb-grid"></div>
-                <div class="thumb-label">05</div>
-              </div>
-              <div class="project-body">
-                <div class="project-meta">
-                  <span class="tag">Hardware</span>
-                  <span class="tag">Test Bench</span>
-                </div>
-                <h3 class="project-title">UAV-Engine Dynamometer Test Bench</h3>
-                <p class="project-desc">
-                  Designed and fabricated a dynamometer rig with rapid
-                  prototyping and embedded hardware to validate data-driven
-                  engine-control algorithms. Tightened the measurement
-                  workflow for repeatable efficiency data.
                 </p>
                 <span class="project-cue">View details →</span>
               </div>
@@ -590,11 +592,14 @@
                project card is clicked. Add or edit content freely below. -->
 
           <template data-project-template="haptic">
+            <figure class="dialog-hero">
+              <img src="assets/HapticTelegraph3Dmodel.png" alt="3D model of the Haptic Telegraph rig — two servos, two load cells, and a Teensy microcontroller" />
+            </figure>
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-1" aria-hidden="true">
+              <div class="dialog-thumb thumb-2" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">01</span>
+                <span class="dialog-thumb-label">02</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">HapticTelegraph: Variable-Delay Surgical Teleoperation</h2>
@@ -605,33 +610,47 @@
             </header>
             <section class="dialog-section">
               <h3>Overview</h3>
-              <p>A research project investigating how variable network delay impacts surgical teleoperation. A hardware-in-the-loop platform simulates 0–500 ms latency variance to map the failure thresholds of a haptic surgical interface — informing safety margins for next-generation telesurgery systems.</p>
+              <p>A research project (ME 8284 — Intermediate Robotics with Medical Applications, University of Minnesota) investigating how variable network delay impacts surgical teleoperation. A hardware-in-the-loop platform simulates 0–500 ms latency variance to map the failure thresholds of a haptic surgical interface — informing safety margins for next-generation telesurgery systems.</p>
             </section>
             <section class="dialog-section">
               <h3>Highlights</h3>
               <ul>
-                <li>Built a Python + embedded haptic teleoperation rig with hardware-in-the-loop delay injection.</li>
-                <li>Simulated <strong>0–500 ms</strong> variable network delay across the operator–robot link.</li>
-                <li>Ran <strong>30+ trials across 5 latency conditions</strong> to evaluate operator response and task success.</li>
-                <li>Found task failures jumped <strong>67%</strong> at 200 ms variance — quantifying the failure cliff.</li>
-                <li>Completion time peaked at <strong>0.3 s latency</strong>, identifying the precision-teleoperation operating envelope.</li>
+                <li>Embedded lead — built the Teensy 4.0 firmware pipeline that read both load cells and drove the two hobby servos in real time.</li>
+                <li>Implemented the UDP loopback link in Python, injecting Gaussian-sampled latency to simulate unstable internet connections.</li>
+                <li>Simulated <strong>0–500 ms</strong> variable network delay across the operator–manipulator link.</li>
+                <li>Ran <strong>30+ trials across 5 latency conditions</strong> to evaluate operator response, force smoothness, and task success.</li>
+                <li>Found task failures jumped <strong>67%</strong> at 200 ms variance — quantifying the failure cliff for precision teleoperation.</li>
+                <li>Completion time peaked at <strong>0.3 s latency</strong>, identifying the operating envelope for surgical-grade workflows.</li>
               </ul>
             </section>
             <section class="dialog-section">
               <h3>Tech &amp; tools</h3>
               <ul class="dialog-chips">
-                <li>Python</li><li>Embedded Hardware</li><li>Haptic Devices</li>
+                <li>Python</li><li>C / Arduino</li><li>Teensy 4.0</li>
+                <li>HX711 Load Cells</li><li>UDP / Serial</li>
                 <li>Real-time Control</li><li>Statistical Analysis</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Links</h3>
+              <ul class="dialog-links">
+                <li>
+                  <a href="https://github.com/ceidahl98/ME8284GroupEmber" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.09c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.66.79.55C20.21 21.39 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                    <span>Source code on GitHub</span>
+                    <span class="dialog-link-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
               </ul>
             </section>
           </template>
 
           <template data-project-template="multirobot">
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-2" aria-hidden="true">
+              <div class="dialog-thumb thumb-3" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">02</span>
+                <span class="dialog-thumb-label">03</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">Multi-Robot Warehouse Simulation</h2>
@@ -665,10 +684,10 @@
 
           <template data-project-template="mmwave">
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-3" aria-hidden="true">
+              <div class="dialog-thumb thumb-1" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">03</span>
+                <span class="dialog-thumb-label">04</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">mmWave Fall-Detection Device</h2>
@@ -705,10 +724,10 @@
 
           <template data-project-template="segmentation">
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-1" aria-hidden="true">
+              <div class="dialog-thumb thumb-2" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">04</span>
+                <span class="dialog-thumb-label">05</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">Semantic Segmentation for Urban Driving</h2>
@@ -741,11 +760,35 @@
           </template>
 
           <template data-project-template="dyno">
+            <figure class="dialog-hero dialog-hero--carousel" data-carousel>
+              <ul class="carousel-slides" role="list">
+                <li class="carousel-slide">
+                  <img src="assets/Test_bench_assembly_1.png" alt="UAV-engine dynamometer test bench — overall assembly view" />
+                </li>
+                <li class="carousel-slide">
+                  <img src="assets/Test_bench_assembly_2.png" alt="UAV-engine dynamometer test bench — alternate assembly view" />
+                </li>
+                <li class="carousel-slide">
+                  <video src="assets/Test_bench_assembly_video.mp4" controls preload="metadata" muted playsinline aria-label="Assembly walkthrough video"></video>
+                </li>
+              </ul>
+              <button type="button" class="carousel-nav carousel-prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-nav carousel-next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <ol class="carousel-dots" aria-label="Slide selector">
+                <li><button type="button" aria-label="Slide 1: assembly view"></button></li>
+                <li><button type="button" aria-label="Slide 2: alternate assembly view"></button></li>
+                <li><button type="button" aria-label="Slide 3: assembly walkthrough video"></button></li>
+              </ol>
+            </figure>
             <header class="dialog-head">
-              <div class="dialog-thumb thumb-2" aria-hidden="true">
+              <div class="dialog-thumb thumb-1" aria-hidden="true">
                 <div class="thumb-glow"></div>
                 <div class="thumb-grid"></div>
-                <span class="dialog-thumb-label">05</span>
+                <span class="dialog-thumb-label">01</span>
               </div>
               <div>
                 <h2 id="exp-dialog-title">UAV-Engine Dynamometer Test Bench</h2>

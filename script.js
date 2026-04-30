@@ -146,12 +146,65 @@
   const dialogContent = dialog ? dialog.querySelector(".dialog-content") : null;
   const dialogClose = dialog ? dialog.querySelector(".dialog-close") : null;
 
+  // Initialize a carousel inside the freshly-cloned dialog content.
+  const initCarousel = (root) => {
+    const track = root.querySelector(".carousel-slides");
+    const slides = Array.from(root.querySelectorAll(".carousel-slide"));
+    const prev = root.querySelector(".carousel-prev");
+    const next = root.querySelector(".carousel-next");
+    const dotButtons = Array.from(root.querySelectorAll(".carousel-dots button"));
+    if (!track || slides.length === 0) return;
+    let index = 0;
+    const max = slides.length;
+
+    const update = () => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dotButtons.forEach((d, i) => d.classList.toggle("is-active", i === index));
+      // pause any non-active video
+      slides.forEach((s, i) => {
+        const v = s.querySelector("video");
+        if (v && i !== index && !v.paused) v.pause();
+      });
+    };
+
+    const go = (delta) => {
+      index = (index + delta + max) % max;
+      update();
+    };
+
+    if (prev) prev.addEventListener("click", () => go(-1));
+    if (next) next.addEventListener("click", () => go(1));
+    dotButtons.forEach((d, i) =>
+      d.addEventListener("click", () => {
+        index = i;
+        update();
+      })
+    );
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+    });
+    // simple touch swipe
+    let touchStartX = null;
+    track.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener("touchend", (e) => {
+      if (touchStartX == null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) go(dx > 0 ? -1 : 1);
+      touchStartX = null;
+    });
+
+    update();
+  };
+
   const openDialogFromTemplate = (selector) => {
     if (!dialog || !dialogContent) return;
     const tpl = document.querySelector(selector);
     if (!tpl) return;
     dialogContent.replaceChildren(tpl.content.cloneNode(true));
     dialogContent.scrollTop = 0;
+    // Initialize any carousels in the freshly-cloned content
+    dialogContent.querySelectorAll("[data-carousel]").forEach(initCarousel);
     dialog.showModal();
     document.body.classList.add("dialog-open");
     requestAnimationFrame(() => dialog.classList.add("is-open"));
@@ -159,6 +212,8 @@
 
   const closeDialog = () => {
     if (!dialog || !dialog.open) return;
+    // Pause any playing videos so audio stops as the dialog closes
+    dialog.querySelectorAll("video").forEach((v) => v.pause());
     dialog.classList.remove("is-open");
     const onEnd = () => {
       dialog.removeEventListener("transitionend", onEnd);
