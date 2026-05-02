@@ -650,6 +650,30 @@
                 <span class="project-cue">View details →</span>
               </div>
             </button>
+
+            <button class="project-card project-trigger reveal" type="button" data-project="pokemon" aria-haspopup="dialog">
+              <div class="project-thumb thumb-3">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">09</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Game AI</span>
+                  <span class="tag">Python</span>
+                </div>
+                <h3 class="project-title">Pokemon Battle Simulator with Minimax &amp; Alpha-Beta AI Agents</h3>
+                <p class="project-desc">
+                  Built a faithful turn-based Pokemon battle simulator in
+                  Python (800+ Pokemon, 600+ moves, full 18&times;18 type
+                  chart) and pitted Minimax and Alpha-Beta search agents —
+                  with a multi-factor heuristic evaluator — against simpler
+                  greedy baselines to study trade-offs between search depth,
+                  pruning, and play strength.
+                </p>
+                <span class="project-cue">View details →</span>
+              </div>
+            </button>
           </div>
 
           <!-- ======= PROJECT DETAIL TEMPLATES =======
@@ -1106,6 +1130,77 @@
                 <li>Biodiesel (FAME)</li><li>Combustion</li>
                 <li>Emissions Analysis</li><li>BS6 Norms</li>
                 <li>Powertrain</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="pokemon">
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-3" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">09</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">Pokemon Battle Simulator with Minimax &amp; Alpha-Beta AI Agents</h2>
+                <ul class="dialog-tags">
+                  <li>Game AI</li><li>Search</li><li>Python</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>Built a faithful turn-based Pokemon battle simulator from scratch in Python and used it as a sandbox for adversarial-search agents. Implemented <strong>Minimax</strong> and <strong>Alpha-Beta</strong> with a custom multi-factor heuristic evaluator, and benchmarked them against simpler greedy baselines to study how search depth, pruning, and evaluation quality translate into play strength.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Game &amp; systems engineering</h3>
+              <ul>
+                <li>Modeled a stateful turn-based combat system with <code>Pokemon</code> and <code>Trainer</code> classes, tracking <strong>20+ per-Pokemon mutable fields</strong> (HP, six stat stages, accuracy stage, status enum, sleep / confusion / bad-poison counters, recharge / charge flags, curse, flinch).</li>
+                <li>Implemented correct turn ordering using <strong>move priority first, then speed</strong> (with paralysis halving and stat-stage multipliers), with a 50/50 tiebreaker &mdash; matching main-series behavior.</li>
+                <li>Handled <strong>withdraw-and-resend semantics</strong> on faint and on voluntary switch, including resetting volatile conditions and stat stages while preserving non-volatile status.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>AI &amp; search</h3>
+              <ul>
+                <li>Implemented <strong>Minimax</strong> over discrete move choices with depth-limited rollout and a custom evaluation function.</li>
+                <li>Added <strong>Alpha-Beta pruning</strong> to the same search, cutting branches whose bounds dominate the running &alpha;/&beta; interval.</li>
+                <li>Designed a <strong>multi-factor heuristic evaluator</strong> combining HP differential, projected damage, status differential, stat totals, fainted-count differential, type effectiveness up to four type interactions, and an anti-repeat penalty on the previously chosen move.</li>
+                <li>Built two simpler baseline agents &mdash; max-base-power <em>"Greedy"</em> and max-expected-damage <em>"Smart-Greedy"</em> &mdash; to serve as benchmarks for the search-based agents.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Data modeling</h3>
+              <ul>
+                <li>Designed a <strong>JSON-driven content pipeline</strong>: <strong>800+ Pokemon</strong> (<code>pokemon.json</code>), <strong>600+ moves</strong> (<code>moves.json</code>), and the complete <strong>18&times;18 type chart</strong> with both offensive and defensive lookups (<code>types.json</code>).</li>
+                <li>Maintained a <code>supported_moves.csv</code> registry tracking which move effects are explicitly handled vs. fall through to default damage-only behavior.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Python implementation</h3>
+              <ul>
+                <li>Used <code>enum.Enum</code> for status conditions, dictionaries as lookup tables for stat-stage and accuracy multipliers, and effect-ID lists as <strong>O(1) dispatch sets</strong> for grouping moves by behavior.</li>
+                <li>Loaded all game data lazily from JSON in <code>__main__</code> to keep the simulator import-clean and unit-testable.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>Minimax</li><li>Alpha-Beta Pruning</li>
+                <li>Heuristic Search</li><li>Game AI</li>
+                <li>OOP</li><li>Enums</li><li>JSON</li><li>CSV</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Links</h3>
+              <ul class="dialog-links">
+                <li>
+                  <a href="https://github.com/BhushanRavikumar/Pokemon_Battle_sim" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.09c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.66.79.55C20.21 21.39 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                    <span>Source code on GitHub</span>
+                    <span class="dialog-link-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
               </ul>
             </section>
           </template>
