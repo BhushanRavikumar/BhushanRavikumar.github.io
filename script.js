@@ -83,7 +83,7 @@
   });
 
   // ---------- Scrollspy: active nav link ----------
-  const sections = ["home", "experience", "projects", "skills"]
+  const sections = ["home", "experience", "projects"]
     .map((id) => document.getElementById(id))
     .filter(Boolean);
   const linkMap = new Map();

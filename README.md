@@ -19,10 +19,9 @@ zero runtime dependencies.
 2. Hero with animated profile, headline reveal, and live stat counters
 3. Dual-direction marquee (specialties + frameworks)
 4. Experience timeline (3 entries)
-5. Recent Projects (3 cards, replace with real work)
-6. Core Skills grid (6 cards, inline SVG icons)
-7. Let's-work-together contact form (client-side validated)
-8. Footer with links + socials
+5. Featured Projects + Other Projects (cards open detail modals)
+6. Let's-work-together contact form (Formspree-ready, mailto fallback)
+7. Footer with links + socials
 
 ## Local preview
 
@@ -47,7 +46,6 @@ Then visit <http://localhost:8080>.
 | Experience summary cards | `index.html` — `#experience` list  |
 | Experience modal content | `index.html` — `<template data-exp-template="…">` blocks |
 | Company logos            | `assets/` folder — referenced by `<img class="exp-logo">` |
-| Skills                   | `index.html` — `#skills` grid      |
 | Social / footer links    | `index.html` — `<footer>`          |
 | Color tokens / accents   | `styles.css` — `:root`             |
 

@@ -1170,59 +1170,6 @@ button { font: inherit; }
 body.dialog-open { overflow: hidden; }
 
 /* =========================================================
-   Skills
-   ========================================================= */
-.skill-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-.skill {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 22px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, var(--panel), var(--bg-2));
-  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), background-color 0.4s var(--ease);
-}
-.skill:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-.skill:hover .skill-arrow { transform: translate(2px, -2px); color: var(--accent); }
-.skill-icon {
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
-  border-radius: var(--radius-sm);
-  background: var(--panel-2);
-  border: 1px solid var(--line);
-  color: var(--accent);
-  flex-shrink: 0;
-}
-.skill-icon svg { width: 22px; height: 22px; }
-.skill h3 {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
-}
-.skill p {
-  margin: 2px 0 0;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-mute);
-}
-.skill-arrow {
-  margin-left: auto;
-  color: var(--text-dim);
-  transition: transform 0.3s var(--ease), color 0.3s var(--ease);
-  font-size: 18px;
-}
-
-/* =========================================================
    Contact
    ========================================================= */
 .section--contact { padding-top: 100px; }
