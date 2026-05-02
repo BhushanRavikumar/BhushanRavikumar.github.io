@@ -1232,6 +1232,17 @@ body.dialog-open { overflow: hidden; }
   font-size: 16px;
   max-width: 520px;
 }
+.contact-mail {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 3px;
+  transition: color 0.25s var(--ease), text-decoration-color 0.25s var(--ease);
+}
+.contact-mail:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
 .contact-form {
   display: flex;
   flex-direction: column;

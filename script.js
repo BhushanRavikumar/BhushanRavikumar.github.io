@@ -113,31 +113,108 @@
   }
 
   // ---------- Contact form ----------
+  // Submission strategy:
+  //   1. If the form's `action` attribute points at a real Formspree endpoint
+  //      (i.e. it does NOT still contain the "YOUR_FORM_ID" placeholder), POST
+  //      the form via fetch and surface success / error inline.
+  //   2. Otherwise, fall back to a `mailto:` link that opens the visitor's
+  //      email client with the fields pre-filled, sent to the address declared
+  //      in `data-fallback-email`.
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
   if (form) {
-    form.addEventListener("submit", (e) => {
+    const submitBtn = form.querySelector("button[type='submit']");
+    const submitLabel = submitBtn?.querySelector(".btn-label");
+    const originalLabel = submitLabel?.textContent || "Send message";
+    const fallbackEmail = form.dataset.fallbackEmail || "";
+    const action = (form.getAttribute("action") || "").trim();
+    const isFormspreeReady = /^https?:\/\//i.test(action) && !/YOUR_FORM_ID/i.test(action);
+
+    const setStatus = (msg, isError = false) => {
+      status.textContent = msg;
+      status.style.color = isError ? "#ff8a8a" : "";
+    };
+
+    const setBusy = (busy) => {
+      if (!submitBtn) return;
+      submitBtn.disabled = busy;
+      if (submitLabel) submitLabel.textContent = busy ? "Sending…" : originalLabel;
+    };
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = new FormData(form);
+
+      // Honeypot — silently drop bot submissions
+      if ((data.get("_gotcha") || "").toString().trim() !== "") return;
+
       const name = (data.get("name") || "").toString().trim();
       const email = (data.get("email") || "").toString().trim();
+      const topic = (data.get("topic") || "").toString().trim();
       const message = (data.get("message") || "").toString().trim();
 
       if (!name || !email || !message) {
-        status.textContent = "Please fill out the required fields.";
-        status.style.color = "#ff8a8a";
+        setStatus("Please fill out name, email, and a short message.", true);
         return;
       }
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       if (!emailOk) {
-        status.textContent = "Please enter a valid email address.";
-        status.style.color = "#ff8a8a";
+        setStatus("That email address doesn't look right — mind double-checking?", true);
         return;
       }
 
-      status.style.color = "";
-      status.textContent = "Thanks! Your message has been queued — I'll be in touch soon.";
-      form.reset();
+      // Fallback: open visitor's email client with the message pre-filled
+      if (!isFormspreeReady) {
+        if (!fallbackEmail) {
+          setStatus("Form isn't wired up yet. Please email me directly.", true);
+          return;
+        }
+        const subject = `Portfolio inquiry from ${name}`;
+        const bodyLines = [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          topic ? `Inquiry type: ${topic}` : null,
+          "",
+          message,
+        ].filter((l) => l !== null);
+        const href =
+          `mailto:${fallbackEmail}` +
+          `?subject=${encodeURIComponent(subject)}` +
+          `&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+        window.location.href = href;
+        setStatus(
+          `Opening your email app… If nothing happens, send a note to ${fallbackEmail}.`
+        );
+        return;
+      }
+
+      // Real submission via Formspree (or any compatible relay)
+      setStatus("Sending…");
+      setBusy(true);
+      try {
+        const res = await fetch(action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+        if (res.ok) {
+          setStatus("Thanks! Your message is on its way — I'll be in touch soon.");
+          form.reset();
+        } else {
+          let msg = "Something went wrong sending the message.";
+          try {
+            const j = await res.json();
+            if (j && Array.isArray(j.errors) && j.errors[0]?.message) msg = j.errors[0].message;
+          } catch (_) {}
+          if (fallbackEmail) msg += ` You can email me directly at ${fallbackEmail}.`;
+          setStatus(msg, true);
+        }
+      } catch (err) {
+        const tail = fallbackEmail ? ` You can email me directly at ${fallbackEmail}.` : "";
+        setStatus(`Network issue — please try again in a moment.${tail}`, true);
+      } finally {
+        setBusy(false);
+      }
     });
   }
 
