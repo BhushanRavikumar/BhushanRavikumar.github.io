@@ -626,6 +626,30 @@
                 <span class="project-cue">View details →</span>
               </div>
             </button>
+
+            <button class="project-card project-trigger reveal" type="button" data-project="dpf" aria-haspopup="dialog">
+              <div class="project-thumb thumb-2 has-image">
+                <img class="thumb-image" src="assets/Engine%20Model%20Ricardo%20WAVE.png" alt="Kirloskar TV-1 engine model with DPF in Ricardo WAVE" loading="lazy" />
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">08</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Powertrain</span>
+                  <span class="tag">Simulation</span>
+                </div>
+                <h3 class="project-title">DPF &amp; Biodiesel Emissions Study in Ricardo WAVE</h3>
+                <p class="project-desc">
+                  B.Tech capstone at PES University: built and validated a 1D
+                  Ricardo WAVE model of a Kirloskar TV-1 diesel engine to
+                  quantify how a Diesel Particulate Filter and FAME biodiesel
+                  blends affect CO, HC, and NOx — finding that DPF + B20
+                  delivers the lowest combined emissions.
+                </p>
+                <span class="project-cue">View details →</span>
+              </div>
+            </button>
           </div>
 
           <!-- ======= PROJECT DETAIL TEMPLATES =======
@@ -1008,6 +1032,77 @@
                 <li>State-space Modeling</li><li>LQR</li>
                 <li>Value Iteration / DP</li><li>Feedback Linearization</li>
                 <li>PD Control</li><li>Real-time Systems</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Links</h3>
+              <ul class="dialog-links">
+                <li>
+                  <a href="https://github.com/BhushanRavikumar/Advanced-Control-Strategies-for-JetPack-Joyride" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.09c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.2.66.79.55C20.21 21.39 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                    <span>Source code on GitHub</span>
+                    <span class="dialog-link-arrow" aria-hidden="true">↗</span>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="dpf">
+            <figure class="dialog-hero">
+              <img src="assets/Engine%20Model%20Ricardo%20WAVE.png" alt="Kirloskar TV-1 engine model with DPF in Ricardo WAVE" />
+            </figure>
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-2" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">08</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">DPF &amp; Biodiesel Emissions Study in Ricardo WAVE</h2>
+                <ul class="dialog-tags">
+                  <li>Powertrain</li><li>Simulation</li><li>Research</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>B.Tech capstone (Phase II, 2021&ndash;22) at <strong>PES University, Department of Mechanical Engineering</strong>. Built a 1D gas-dynamics model of a <strong>Kirloskar TV-1</strong> single-cylinder diesel engine in <strong>Ricardo WAVE</strong>, then quantified how a <strong>Diesel Particulate Filter (DPF)</strong> and <strong>FAME biodiesel</strong> blends affect tailpipe emissions of CO, HC, and NOx &mdash; closing a literature gap by studying both interventions together. Work was co-authored into a paper with the project&rsquo;s faculty advisor.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>Engine model &amp; validation</h3>
+              <ul>
+                <li>Modeled the Kirloskar TV-1 in Ricardo WAVE from full manufacturer specs &mdash; <strong>5.2 kW (7 HP)</strong>, compression ratio <strong>17.5:1</strong>, bore &times; stroke <strong>87.5 mm &times; 110 mm</strong>, 1500 rpm, spray-guided injection at <strong>220 kgf/cm&sup2;</strong>, 23&deg; BTDC.</li>
+                <li>Tuned manifold/duct geometry to avoid double-counting pressure losses (discharge coefficient = 1.0, friction multipliers = 0, collinear y-junctions) so port losses stayed within the cylinder-head model.</li>
+                <li>Enabled <strong>passive scalars</strong> for NO, CO, and HC and configured molecular masses to track per-species emissions through the simulation.</li>
+                <li>Validated the model against published experimental data (Suyambazhahan, Kirloskar TV-1 with diesel blends) &mdash; CO, HC, and NOx trends matched the experimental curves within expected simulation tolerances.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>DPF &amp; fuel modeling</h3>
+              <ul>
+                <li>Modeled the <strong>DPF</strong> as Complex Y-junction entry/exit cones plus a single DPF Duct brick &mdash; <strong>ceramic carbide substrate</strong>, <strong>600 cells/in&sup2;</strong>, 0.1016 mm wall thickness, wall heat-transfer coefficient = 5.</li>
+                <li>Authored fuel data files for <strong>FAME</strong>, <strong>1,4-dioxane</strong>, diesel, and ethanol &mdash; chemical composition, entropy of formation, lower heating value, density, vapor-pressure profile, and specific-heat curve for each.</li>
+                <li>Generated <strong>B5 &rarr; B20 biodiesel blends</strong> via the Ricardo WAVE command-line blending tool with fractional compositions of the component fuel files.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Findings</h3>
+              <ul>
+                <li><strong>DPF impact</strong> at 1500 rpm vs. unfiltered exhaust: <strong>CO &darr; 10.2%</strong>, <strong>HC &darr; 14.8%</strong>, <strong>NOx &darr; 63.4%</strong>.</li>
+                <li><strong>Biodiesel impact</strong> per +5% FAME (B5 &rarr; B20): <strong>CO &darr; 4.2%</strong>, <strong>NOx &uarr; 3.2%</strong>, HC change negligible &mdash; explained by the extra fuel-bound oxygen driving more complete combustion (lowering CO/HC) while raising adiabatic flame temperature (driving thermal NOx).</li>
+                <li>Brake thermal efficiency held flat across blends under idealized combustion conditions.</li>
+                <li>Recommended <strong>DPF + B20</strong> as the lowest combined-emissions configuration; pure biodiesel alone is not the most cost-effective route once unmodified-engine wear and fuel cost are factored in.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Ricardo WAVE</li><li>1D Gas Dynamics</li>
+                <li>Diesel Engines</li><li>DPF Modeling</li>
+                <li>Biodiesel (FAME)</li><li>Combustion</li>
+                <li>Emissions Analysis</li><li>BS6 Norms</li>
+                <li>Powertrain</li>
               </ul>
             </section>
           </template>
