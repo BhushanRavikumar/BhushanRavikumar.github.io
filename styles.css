@@ -109,6 +109,26 @@ button { font: inherit; }
 .section-title--xl { font-size: clamp(48px, 8vw, 112px); }
 .title-accent { color: var(--accent); font-style: italic; font-weight: 500; }
 
+/* Smaller sub-heading inside a section (e.g. "Other Projects" under "Featured Projects") */
+.subsection-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 88px 0 28px;
+  max-width: 720px;
+}
+.subsection-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .subsection-header { margin-top: 64px; }
+}
+
 /* =========================================================
    Nav
    ========================================================= */
