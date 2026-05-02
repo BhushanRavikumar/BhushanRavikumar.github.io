@@ -603,6 +603,29 @@
                 <span class="project-cue">View details →</span>
               </div>
             </button>
+
+            <button class="project-card project-trigger reveal" type="button" data-project="jetpack" aria-haspopup="dialog">
+              <div class="project-thumb thumb-1">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <div class="thumb-label">07</div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="tag">Control Systems</span>
+                  <span class="tag">Python</span>
+                </div>
+                <h3 class="project-title">Advanced Control Strategies for Jetpack Joyride</h3>
+                <p class="project-desc">
+                  Built a modified Jetpack Joyride in Pygame as a controls
+                  testbed and implemented LQR, Dynamic Programming, and
+                  Feedback Linearization with adaptive gains for vertical-motion
+                  tracking and real-time obstacle avoidance — analyzing
+                  trade-offs across tracking, control effort, and avoidance.
+                </p>
+                <span class="project-cue">View details →</span>
+              </div>
+            </button>
           </div>
 
           <!-- ======= PROJECT DETAIL TEMPLATES =======
@@ -907,6 +930,84 @@
               <ul class="dialog-chips">
                 <li>ANSYS</li><li>SolidWorks</li><li>CFRP Materials</li>
                 <li>FEA</li><li>3D Printing</li><li>Aerospace Design</li>
+              </ul>
+            </section>
+          </template>
+
+          <template data-project-template="jetpack">
+            <figure class="dialog-hero dialog-hero--carousel" data-carousel>
+              <ul class="carousel-slides" role="list">
+                <li class="carousel-slide">
+                  <video src="assets/Jetpack_LQR_control.mp4" controls preload="metadata" muted playsinline aria-label="LQR controller demo"></video>
+                </li>
+                <li class="carousel-slide">
+                  <video src="assets/jetpack_dynamic_programming.mp4" controls preload="metadata" muted playsinline aria-label="Dynamic Programming controller demo"></video>
+                </li>
+                <li class="carousel-slide">
+                  <video src="assets/jetpack_feedback_linearization.mp4" controls preload="metadata" muted playsinline aria-label="Feedback Linearization controller demo"></video>
+                </li>
+              </ul>
+              <button type="button" class="carousel-nav carousel-prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-nav carousel-next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <ol class="carousel-dots" aria-label="Slide selector">
+                <li><button type="button" aria-label="Slide 1: LQR controller"></button></li>
+                <li><button type="button" aria-label="Slide 2: Dynamic Programming controller"></button></li>
+                <li><button type="button" aria-label="Slide 3: Feedback Linearization controller"></button></li>
+              </ol>
+            </figure>
+            <header class="dialog-head">
+              <div class="dialog-thumb thumb-1" aria-hidden="true">
+                <div class="thumb-glow"></div>
+                <div class="thumb-grid"></div>
+                <span class="dialog-thumb-label">07</span>
+              </div>
+              <div>
+                <h2 id="exp-dialog-title">Advanced Control Strategies for Jetpack Joyride</h2>
+                <ul class="dialog-tags">
+                  <li>Control Systems</li><li>Python</li><li>Research</li>
+                </ul>
+              </div>
+            </header>
+            <section class="dialog-section">
+              <h3>Overview</h3>
+              <p>Final project for <strong>ME 8281 — Advanced Control System Design</strong> at the University of Minnesota. Built a modified version of <em>Jetpack Joyride</em> in <strong>Pygame</strong> as a real-time controls testbed, then implemented and benchmarked three advanced controllers — <strong>LQR</strong>, <strong>Dynamic Programming</strong> (value iteration), and <strong>Feedback Linearization</strong> with adaptive gains — for vertical-motion tracking and obstacle avoidance under nonlinear, randomized conditions.</p>
+            </section>
+            <section class="dialog-section">
+              <h3>System &amp; modeling</h3>
+              <ul>
+                <li>Modeled the player&rsquo;s vertical motion as a discrete-time second-order state-space system (gravity vs. binary jetpack thrust) running at <strong>60 fps</strong>.</li>
+                <li>Built a shared obstacle-detection &amp; path-planning layer with a <strong>400-pixel look-ahead</strong> that emits a safe reference trajectory through randomly spawned horizontal/vertical lasers and tracking rockets — reused by all three controllers for fair comparison.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Controllers implemented</h3>
+              <ul>
+                <li><strong>LQR</strong> — solved the discrete algebraic Riccati equation via <code>scipy.linalg.solve_discrete_are</code> and tuned <em>Q</em>/<em>R</em> weights to balance position tracking against control effort. Resulted in smooth, predictable trajectory tracking with low computational cost.</li>
+                <li><strong>Dynamic Programming</strong> — value iteration over a discretized state space (<strong>50 position bins &times; 30 velocity bins</strong>, 2 actions, &gamma; = 0.95) with a cost function combining tracking error, velocity penalty, control effort, and a large obstacle-proximity penalty. Delivered the strongest obstacle avoidance through multi-step look-ahead planning.</li>
+                <li><strong>Feedback Linearization</strong> — collapsed the nonlinear dynamics into an equivalent linear system via a virtual control input, then closed the loop with a <strong>PD controller</strong> whose gains adapt with obstacle proximity. Added first-order control smoothing (&alpha; = 0.7) for clean actuation. Achieved the most precise tracking with adaptive responsiveness.</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Comparative analysis</h3>
+              <ul>
+                <li>Benchmarked the three controllers across <strong>tracking accuracy</strong>, <strong>obstacle avoidance success</strong>, <strong>control effort/smoothness</strong>, <strong>computational cost</strong>, and <strong>adaptability</strong>.</li>
+                <li>LQR &mdash; best smoothness, low compute, but limited responsiveness when obstacles demand large deviations from the reference.</li>
+                <li>Dynamic Programming &mdash; best obstacle avoidance via look-ahead, at the cost of heavier compute and discretization-induced jitter.</li>
+                <li>Feedback Linearization &mdash; best tracking precision plus on-the-fly adaptive gains; well-suited to systems that demand both accuracy and reactivity.</li>
+                <li>Mapped each method&rsquo;s sweet spot to broader application areas (robotics, autonomous vehicles, human-machine interfaces).</li>
+              </ul>
+            </section>
+            <section class="dialog-section">
+              <h3>Tech &amp; tools</h3>
+              <ul class="dialog-chips">
+                <li>Python</li><li>Pygame</li><li>NumPy</li><li>SciPy</li>
+                <li>State-space Modeling</li><li>LQR</li>
+                <li>Value Iteration / DP</li><li>Feedback Linearization</li>
+                <li>PD Control</li><li>Real-time Systems</li>
               </ul>
             </section>
           </template>
