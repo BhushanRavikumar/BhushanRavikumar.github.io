@@ -1,0 +1,171 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "script",
+      "community": 1,
+      "norm_label": "script.js"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 0,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "Bhushan Ravikumar \u2014 Portfolio",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_bhushan_ravikumar_portfolio",
+      "community": 0,
+      "norm_label": "bhushan ravikumar \u2014 portfolio"
+    },
+    {
+      "label": "Stack",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "readme_stack",
+      "community": 0,
+      "norm_label": "stack"
+    },
+    {
+      "label": "Sections",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "readme_sections",
+      "community": 0,
+      "norm_label": "sections"
+    },
+    {
+      "label": "Local preview",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "readme_local_preview",
+      "community": 0,
+      "norm_label": "local preview"
+    },
+    {
+      "label": "Replacing placeholder content",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "readme_replacing_placeholder_content",
+      "community": 0,
+      "norm_label": "replacing placeholder content"
+    },
+    {
+      "label": "Deployment",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "readme_deployment",
+      "community": 0,
+      "norm_label": "deployment"
+    },
+    {
+      "label": "License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "readme_license",
+      "community": 0,
+      "norm_label": "license"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_bhushan_ravikumar_portfolio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "readme_bhushan_ravikumar_portfolio",
+      "target": "readme_deployment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "readme_bhushan_ravikumar_portfolio",
+      "target": "readme_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "readme_bhushan_ravikumar_portfolio",
+      "target": "readme_local_preview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "readme_bhushan_ravikumar_portfolio",
+      "target": "readme_replacing_placeholder_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "readme_bhushan_ravikumar_portfolio",
+      "target": "readme_sections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "readme_bhushan_ravikumar_portfolio",
+      "target": "readme_stack",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "7570435ece77c532dd8c7e56fe9616da418e1ab6"
+}
