@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { Gallery4, type Gallery4Item } from "@/components/ui/gallery4";
+import { Reveal } from "@/components/site/reveal";
 import { useDialog } from "@/components/site/dialog-provider";
 import {
   featuredProjects,
@@ -64,18 +65,22 @@ export function Projects() {
 
   return (
     <section id="projects" style={{ scrollMarginTop: 90 }}>
-      <Gallery4
-        title="Featured Projects"
-        description="Selected work across robotics, embedded systems, and test engineering. Tap a card for the full breakdown — highlights, media, and source."
-        items={toItems(featuredProjects)}
-        onItemClick={onItemClick}
-      />
-      <Gallery4
-        title="Other Projects"
-        description="More research and engineering projects spanning controls, computer vision, aerospace, powertrain simulation, and game AI."
-        items={toItems(otherProjects)}
-        onItemClick={onItemClick}
-      />
+      <Reveal as="div">
+        <Gallery4
+          title="Featured Projects"
+          description="Selected work across robotics, embedded systems, and test engineering. Tap a card for the full breakdown — highlights, media, and source."
+          items={toItems(featuredProjects)}
+          onItemClick={onItemClick}
+        />
+      </Reveal>
+      <Reveal as="div">
+        <Gallery4
+          title="Other Projects"
+          description="More research and engineering projects spanning controls, computer vision, aerospace, powertrain simulation, and game AI."
+          items={toItems(otherProjects)}
+          onItemClick={onItemClick}
+        />
+      </Reveal>
     </section>
   );
 }

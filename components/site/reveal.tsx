@@ -1,52 +1,68 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
+import { motion, useReducedMotion } from "framer-motion";
 
-type RevealProps<T extends React.ElementType> = {
-  as?: T;
+type MotionTagName =
+  | "div"
+  | "section"
+  | "header"
+  | "ul"
+  | "li"
+  | "p"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "button"
+  | "form"
+  | "a"
+  | "span";
+
+type RevealProps = {
+  as?: MotionTagName;
   children: React.ReactNode;
   className?: string;
-} & Omit<React.ComponentPropsWithoutRef<T>, "as" | "children" | "className">;
+  /** Stagger offset in seconds. */
+  delay?: number;
+} & Record<string, unknown>;
 
 /**
- * Fades + slides its content in once it scrolls into view, mirroring the
- * original IntersectionObserver `.reveal` behavior.
+ * Scroll-triggered entrance (Framer Motion). Fades + lifts content into view
+ * once, with an ease-out curve. Honors `prefers-reduced-motion` by rendering
+ * the element statically with no animation.
  */
-export function Reveal<T extends React.ElementType = "div">({
-  as,
+export function Reveal({
+  as = "div",
   children,
   className,
+  delay = 0,
   ...rest
-}: RevealProps<T>) {
-  const Tag = (as ?? "div") as React.ElementType;
-  const ref = React.useRef<HTMLElement>(null);
+}: RevealProps) {
+  const shouldReduceMotion = useReducedMotion();
 
-  React.useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (!("IntersectionObserver" in window)) {
-      el.classList.add("is-visible");
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+  if (shouldReduceMotion) {
+    const Tag = as as React.ElementType;
+    return (
+      <Tag className={className} {...rest}>
+        {children}
+      </Tag>
     );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
+  }
+
+  const MotionTag = (motion as unknown as Record<string, React.ElementType>)[
+    as
+  ];
 
   return (
-    <Tag ref={ref} className={cn("reveal", className)} {...rest}>
+    <MotionTag
+      className={className}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -40px 0px" }}
+      transition={{ duration: 0.6, ease: "easeOut", delay }}
+      {...rest}
+    >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }

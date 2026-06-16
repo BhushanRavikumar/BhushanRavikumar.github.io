@@ -202,8 +202,8 @@ const Gallery4 = ({
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
-                currentSlide === index ? "bg-primary" : "bg-primary/20"
+              className={`h-2 w-2 cursor-pointer rounded-full transition-colors ${
+                currentSlide === index ? "bg-primary" : "bg-primary/20 hover:bg-primary/50"
               }`}
               onClick={() => carouselApi?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}

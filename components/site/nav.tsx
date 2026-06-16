@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { motion, useReducedMotion, type HTMLMotionProps } from "framer-motion";
 
 const LINKS = [
   { id: "home", label: "Home" },
@@ -11,6 +12,15 @@ const LINKS = [
 export function Nav() {
   const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState("home");
+  const shouldReduceMotion = useReducedMotion();
+
+  const intro: HTMLMotionProps<"header"> = shouldReduceMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: -16 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.5, ease: "easeOut", delay: 0.1 },
+      };
 
   React.useEffect(() => {
     if (!("IntersectionObserver" in window)) return;
@@ -33,7 +43,7 @@ export function Nav() {
   }, []);
 
   return (
-    <header className="nav-wrap">
+    <motion.header className="nav-wrap" {...intro}>
       <nav className="nav" aria-label="Primary">
         <a href="#home" className="nav-logo" aria-label="Home">
           <span className="nav-logo-mark">B</span>
@@ -64,6 +74,6 @@ export function Nav() {
           <span />
         </button>
       </nav>
-    </header>
+    </motion.header>
   );
 }

@@ -21,8 +21,9 @@ export function Experience() {
         </Reveal>
 
         <ol className="timeline" role="list">
-          {experiences.map((exp) => (
-            <Reveal as="li" className="exp" key={exp.id}>
+          {experiences.map((exp, i) => (
+            <Reveal as="li" className="exp" key={exp.id} delay={i * 0.06}>
+
               <button
                 className="exp-trigger"
                 type="button"
