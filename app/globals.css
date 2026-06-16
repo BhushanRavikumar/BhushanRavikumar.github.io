@@ -8,11 +8,52 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
-/* shadcn / DottedSurface theme tokens. `--theme(--color-foreground/.1)`
-   in the demo resolves these. */
-@theme {
-  --color-background: #0a0a0a;
-  --color-foreground: #f4f1ea;
+/* shadcn design tokens (HSL channels), tuned to the site's dark + cream theme.
+   Consumed both directly — e.g. `hsl(var(--primary)/0.8)` in the gallery
+   overlay — and via the Tailwind color utilities mapped in `@theme inline`. */
+:root {
+  --background: 0 0% 4%;
+  --foreground: 44 33% 94%;
+  --card: 0 0% 7%;
+  --card-foreground: 44 33% 94%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 44 33% 94%;
+  --primary: 43 47% 80%;
+  --primary-foreground: 0 0% 4%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 44 33% 94%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 63%;
+  --accent: 0 0% 14%;
+  --accent-foreground: 44 33% 94%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 16%;
+  --input: 0 0% 16%;
+  --ring: 43 47% 80%;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 }
 
 /* DottedSurface uses the `-z-1` utility, which is not part of the
