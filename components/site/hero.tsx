@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/site/reveal";
 import { StatCounter } from "@/components/site/stat-counter";
 
@@ -27,7 +28,15 @@ export function Hero() {
         <Reveal className="hero-intro">
           <div className="avatar">
             <div className="avatar-ring" />
-            <div className="avatar-inner">BR</div>
+            <div className="avatar-inner">
+                <Image
+                  src="/assets/Bhushan Headshot white background.png"
+                  alt="Bhushan Ravikumar"
+                  fill
+                  className="avatar-photo"
+                  priority
+                />
+              </div>
           </div>
           <div>
             <p className="hero-name">Bhushan Ravikumar</p>

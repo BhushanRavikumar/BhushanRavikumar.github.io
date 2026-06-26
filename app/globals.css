@@ -407,15 +407,12 @@ button { font: inherit; }
   position: absolute;
   inset: 2px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--accent);
-  font-size: clamp(22px, 2.4vw, 32px);
+  overflow: hidden;
   border: 1px solid var(--line);
+}
+.avatar-photo {
+  object-fit: cover;
+  object-position: center top;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
