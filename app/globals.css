@@ -390,8 +390,8 @@ button { font: inherit; }
 }
 .avatar {
   position: relative;
-  width: clamp(72px, 7vw, 104px);
-  height: clamp(72px, 7vw, 104px);
+  width: clamp(144px, 14vw, 208px);
+  height: clamp(144px, 14vw, 208px);
   border-radius: 50%;
   flex-shrink: 0;
 }
